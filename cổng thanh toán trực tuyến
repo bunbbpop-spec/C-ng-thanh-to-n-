@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cổng thanh toán trực tuyến — Đại học Đà Lạt</title>
+  <meta name="description" content="Cổng thanh toán học phí trực tuyến cho sinh viên Đại học Đà Lạt — nhanh chóng, an toàn và tiện lợi. Thanh toán bằng thẻ, Internet Banking hoặc ví điện tử." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --brand:#0b5ed7;
+      --muted:#6b7280;
+      --bg:#f7fbff;
+      --card:#ffffff;
+      --radius:12px;
+      --max:1100px;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,var(--bg),#ffffff);color:#0f1724;line-height:1.45}
+    .container{max-width:var(--max);margin:40px auto;padding:20px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{
+      width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--brand),#3b82f6);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;
+      box-shadow:0 6px 18px rgba(11,94,215,0.18);
+    }
+    .brand h1{font-size:18px;margin:0}
+    nav{display:flex;gap:18px;align-items:center}
+    nav a{color:var(--muted);text-decoration:none;font-weight:600;font-size:14px}
+    .hero{
+      display:grid;grid-template-columns:1fr 420px;gap:28px;margin-top:22px;align-items:center;
+    }
+    .card{background:var(--card);border-radius:var(--radius);padding:22px;box-shadow:0 6px 30px rgba(12,34,80,0.06)}
+    .hero .left h2{font-size:28px;margin:0 0 8px 0}
+    .hero .left p{color:var(--muted);margin:0 0 18px 0}
+    .features{display:flex;gap:12px;flex-wrap:wrap}
+    .pill{background:#f1f5f9;padding:8px 12px;border-radius:999px;font-weight:600;color:#0f1724;font-size:13px}
+    /* form */
+    form {display:flex;flex-direction:column;gap:12px}
+    label{font-size:13px;color:var(--muted);font-weight:600}
+    input[type="text"], input[type="number"], select {
+      padding:12px;border-radius:10px;border:1px solid #e6edf8;font-size:15px;background:#fbfdff;
+    }
+    .row{display:flex;gap:12px}
+    .row .col{flex:1}
+    .btn{
+      display:inline-flex;align-items:center;gap:10px;justify-content:center;padding:12px 16px;border-radius:10px;background:var(--brand);color:white;font-weight:700;border:0;cursor:pointer;
+      box-shadow:0 8px 24px rgba(11,94,215,0.18);font-size:15px;
+    }
+    .small{font-size:13px;color:var(--muted)}
+    .notes{font-size:13px;color:#0b7a3d;background:#ecfdf3;padding:10px;border-radius:8px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .benefit{display:flex;gap:12px;align-items:flex-start}
+    .badge{width:46px;height:46px;border-radius:10px;background:#eef2ff;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--brand)}
+    footer{margin-top:28px;text-align:center;color:var(--muted);font-size:13px;padding:18px}
+    /* responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr; }
+      .grid-3{grid-template-columns:1fr}
+      header{flex-direction:column;align-items:flex-start;gap:14px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">ĐL</div>
+        <div>
+          <h1>Cổng thanh toán trực tuyến</h1>
+          <div class="small">Đại học Đà Lạt — Thanh toán học phí nhanh, an toàn</div>
+        </div>
+      </div>
+      <nav aria-label="Chức năng">
+        <a href="#how">Cách thức</a>
+        <a href="#benefits">Lợi ích</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+    </header>
+
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="left">
+        <div class="card">
+          <h2 id="hero-title">Thanh toán học phí — Nhanh chóng & An toàn</h2>
+          <p>Thanh toán trực tuyến cho sinh viên Đại học Đà Lạt. Hỗ trợ thẻ nội địa, thẻ quốc tế, Internet Banking và ví điện tử. Xác nhận tự động, biên lai điện tử gửi về email/số điện thoại.</p>
+
+          <div class="features" role="list">
+            <div class="pill" role="listitem">Xác thực sinh viên</div>
+            <div class="pill" role="listitem">Nhiều phương thức thanh toán</div>
+            <div class="pill" role="listitem">Biên lai điện tử</div>
+          </div>
+
+          <hr style="margin:18px 0;border:none;border-top:1px solid #eef6ff">
+
+          <h3 style="margin:0 0 8px 0">Thanh toán ngay</h3>
+          <form id="paymentForm" class="mt" aria-label="Form thanh toán">
+            <label for="studentId">Mã số sinh viên</label>
+            <input id="studentId" name="studentId" type="text" placeholder="VD: 20190001" required>
+
+            <div class="row">
+              <div class="col">
+                <label for="fullName">Họ và tên</label>
+                <input id="fullName" name="fullName" type="text" placeholder="Nguyễn Văn A" required>
+              </div>
+              <div class="col">
+                <label for="faculty">Khoa / Lớp</label>
+                <input id="faculty" name="faculty" type="text" placeholder="VD: Khoa CNTT - K62" required>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <label for="amount">Số tiền (VNĐ)</label>
+                <input id="amount" name="amount" type="number" placeholder="VD: 2500000" required min="1000" step="1000">
+              </div>
+              <div class="col">
+                <label for="method">Phương thức</label>
+                <select id="method" name="method" required>
+                  <option value="">Chọn phương thức</option>
+                  <option>Thẻ ATM/Internet Banking</option>
+                  <option>Thẻ quốc tế (Visa/Master)</option>
+                  <option>Ví điện tử (Momo/ZaloPay,..)</option>
+                </select>
+              </div>
+            </div>
+
+            <div style="display:flex;gap:10px;align-items:center;margin-top:8px">
+              <button type="submit" class="btn">Thanh toán</button>
+              <div class="small">Hoặc <a href="#contact">liên hệ hỗ trợ</a></div>
+            </div>
+
+            <div id="formMsg" class="small" style="margin-top:8px;color:var(--muted)"></div>
+          </form>
+        </div>
+
+        <div style="margin-top:12px;display:flex;gap:12px;align-items:center">
+          <div class="notes">Lưu ý: Biên lai sẽ được gửi tự động sau khi thanh toán thành công. Liên hệ Phòng Tài chính - Kế toán nếu có sai sót.</div>
+        </div>
+      </div>
+
+      <aside>
+        <div class="card">
+          <h4 style="margin:0 0 8px 0">Tại sao chọn cổng này?</h4>
+          <div class="grid-3">
+            <div class="benefit">
+              <div class="badge">01</div>
+              <div>
+                <strong>Nhanh</strong>
+                <div class="small">Thanh toán trong vài phút, xác nhận ngay.</div>
+              </div>
+            </div>
+            <div class="benefit">
+              <div class="badge">02</div>
+              <div>
+                <strong>An toàn</strong>
+                <div class="small">Mã hóa dữ liệu, tuân thủ tiêu chuẩn thanh toán.</div>
+              </div>
+            </div>
+            <div class="benefit">
+              <div class="badge">03</div>
+              <div>
+                <strong>Tiện lợi</strong>
+                <div class="small">Hỗ trợ nhiều phương thức và biên lai điện tử.</div>
+              </div>
+            </div>
+          </div>
+
+          <hr style="margin:14px 0;border:none;border-top:1px solid #eef6ff">
+
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <div class="small">Hỗ trợ 24/7</div>
+              <div style="font-weight:700">hotline: 0263-xxx-xxx</div>
+            </div>
+            <div style="text-align:right">
+              <div class="small">Email</div>
+              <div style="font-weight:700">ttoan@dlu.edu.vn</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:12px" class="card">
+          <h4 style="margin:0 0 8px 0">Bảo mật & Xác thực</h4>
+          <p class="small">Hệ thống sử dụng kết nối HTTPS, mã hóa thông tin và xác thực sinh viên qua mã MSV và email trường. Không lưu thông tin thẻ trên máy chủ.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section id="how" style="margin-top:18px">
+      <div class="card">
+        <h3 style="margin-top:0">Cách thức hoạt động — 3 bước đơn giản</h3>
+        <ol style="padding-left:18px;color:var(--muted)">
+          <li>Nhập Mã số sinh viên, thông tin và số tiền cần đóng.</li>
+          <li>Chọn phương thức thanh toán và xác nhận (OTP nếu cần).</li>
+          <li>Nhận biên lai điện tử qua email và SMS — thanh toán cập nhật lên hệ thống nhà trường tự động.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="benefits" style="margin-top:18px">
+      <div class="card">
+        <h3 style="margin-top:0">Lợi ích dành cho sinh viên và nhà trường</h3>
+        <ul style="color:var(--muted);padding-left:18px">
+          <li>Tiết kiệm thời gian — không cần xếp hàng.</li>
+          <li>Đảm bảo minh bạch trong quản lý thu tiền học phí.</li>
+          <li>Hỗ trợ lưu biên lai điện tử tiện tra cứu.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="faq" style="margin-top:18px">
+      <div class="card">
+        <h3 style="margin-top:0">Câu hỏi thường gặp (FAQ)</h3>
+        <details>
+          <summary style="cursor:pointer;font-weight:700">Tôi có thể thanh toán bằng thẻ quốc tế không?</summary>
+          <p class="small" style="margin:8px 0 0 0">Có — cổng hỗ trợ Visa/Master. Một số giao dịch có thể yêu cầu xác thực 3D Secure.</p>
+        </details>
+        <details style="margin-top:8px">
+          <summary style="cursor:pointer;font-weight:700">Làm sao nhận biên lai?</summary>
+          <p class="small" style="margin:8px 0 0 0">Biên lai điện tử gửi vào email và SMS đã điền. Bạn có thể in hoặc lưu PDF.</p>
+        </details>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Đại học Đà Lạt — Cổng thanh toán trực tuyến · Địa chỉ: 01 Phù Đổng Thiên Vương, Đà Lạt · <a href="#contact">Liên hệ</a>
+    </footer>
+  </div>
+
+  <script>
+    // Hiển thị năm hiện tại
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Xử lý form (mô phỏng). Thay phần này bằng gọi API thực tế (fetch/axios) tới backend của trường:
+    document.getElementById('paymentForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const msgEl = document.getElementById('formMsg');
+      msgEl.style.color = 'var(--muted)';
+      msgEl.textContent = 'Đang khởi tạo giao dịch...';
+
+      const payload = {
+        studentId: document.getElementById('studentId').value.trim(),
+        fullName: document.getElementById('fullName').value.trim(),
+        faculty: document.getElementById('faculty').value.trim(),
+        amount: Number(document.getElementById('amount').value),
+        method: document.getElementById('method').value
+      };
+
+      // VALIDATION cơ bản
+      if(!payload.studentId || !payload.fullName || !payload.amount || !payload.method){
+        msgEl.style.color = 'crimson';
+        msgEl.textContent = 'Vui lòng điền đầy đủ thông tin và chọn phương thức.';
+        return;
+      }
+
+      // --------------- PHASE: tích hợp thực tế ---------------
+      // Thay đoạn setTimeout bằng request tới endpoint backend, ví dụ:
+      // fetch('/api/payments/create', {method:'POST',headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload)})
+      //  .then(r => r.json()).then(data => { redirect to payment gateway or show success } )
+      //  .catch(err => { show error } );
+
+      // Mô phỏng thành công:
+      setTimeout(() => {
+        msgEl.style.color = '#0b7a3d';
+        msgEl.textContent = 'Giao dịch khởi tạo thành công. Bạn sẽ được chuyển tới cổng thanh toán...';
+
+        // giả lập redirect (trong thực tế redirect tới trang của ngân hàng/ví)
+        setTimeout(() => {
+          alert('Mô phỏng: chuyển tới cổng thanh toán (thực tế hãy redirect tới gateway).');
+          msgEl.textContent = 'Sau khi thanh toán thành công, biên lai sẽ được gửi tới email/SMS.';
+        }, 800);
+      }, 1200);
+    });
+  </script>
+</body>
+</html>
